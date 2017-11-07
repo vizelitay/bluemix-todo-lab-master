@@ -1,7 +1,7 @@
 
 applications:
-- name:      bluemix-todo-node301017
-  host:      bluemix-todo-node301017-${random-word}
+- name:      bluemix-todo
+  host:      bluemix-todo-${random-word}
   memory:    128M
   services:
   - todo-db
