@@ -1,7 +1,10 @@
-
+declared-services: 
+  todo-db:
+    label: cloudantNoSQLDB 
+    plan: Lite 
 applications:
-- name:      bluemix-todo
-  host:      bluemix-todo-${random-word}
-  memory:    128M
+- name: bluemix-todo
+  random-route: true
+  memory: 256M
   services:
   - todo-db
