@@ -1,10 +1,15 @@
-applications:
-- name: bluemix-todo
-  host: bluemix-todo-${random-word}
-  memory: 128M
 declared-services:
   todo-db:
     label: cloudantNoSQLDB
-    plan: lite
-    services:
-    - todo-db
+    plan: Lite
+applications:
+- path: .
+  memory: 512M
+  instances: 1
+  domain: mybluemix.net
+  name: bluemix-todo
+  host: bluemix-todo-${random-word}
+  services:
+  - todo-db
+  env:
+    NODE_RED_STORAGE_NAME: todo-db
