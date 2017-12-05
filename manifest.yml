@@ -1,7 +1,3 @@
-declared-services:
-  todo-db:
-    label: cloudantNoSQLDB
-    plan: Lite
 applications:
 - path: .
   memory: 512M
@@ -9,7 +5,9 @@ applications:
   domain: mybluemix.net
   name: bluemix-todo
   host: bluemix-todo-${random-word}
+declared-services:
+  todo-db:
+    label: cloudantNoSQLDB
+    plan: Lite
   services:
   - todo-db
-  env:
-    NODE_RED_STORAGE_NAME: todo-db
